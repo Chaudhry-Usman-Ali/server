@@ -1,8 +1,9 @@
+/* eslint-disable max-len */
 const { Sequelize, DataTypes, Model } = require('sequelize');
 
-const sequelize = new Sequelize('blog_db', 'lebron', 'james', {
-  host: 'localhost',
-  dialect: 'postgres',
+const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
+  dialect: process.env.DB_DIALECT,
 });
 
 sequelize
